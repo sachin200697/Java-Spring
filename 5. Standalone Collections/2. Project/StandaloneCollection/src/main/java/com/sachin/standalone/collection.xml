@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:c="http://www.springframework.org/schema/c"
+ xmlns:util="http://www.springframework.org/schema/util"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd
+ http://www.springframework.org/schema/util
+ http://www.springframework.org/schema/util/spring-util.xsd">
+    
+    <util:list list-class="java.util.LinkedList" id="myfriends">
+        <value>Sachin Kumar</value>
+        <value>Pradeep Kumar</value>
+        <value>Naman Kumar</value>
+        <value>Arun Kumar</value>
+    </util:list>
+    
+    <util:map map-class="java.util.HashMap" id="myFeeStructure">
+        <entry key="python" value="12"/>
+        <entry key="Java" value="120"/>
+        <entry key="React" value="1200"/>
+    </util:map>
+    
+    <util:properties id="myProperties">
+        <prop key="driver">com.mysql.cj.jdbc.Driver</prop>
+        <prop key="username">sachin</prop>
+        <prop key="password">sachin</prop>
+    </util:properties>
+    
+   <!--to enable annotations-->
+   <context:annotation-config />
+   
+   <bean class="com.sachin.standalone.Person" name="person">
+       <property name="friends">
+           <ref bean="myfriends"/>
+       </property>
+       <property name="feeStructure">
+           <ref bean="myFeeStructure"/>           
+       </property>
+       <property name="properties">
+           <ref bean="myProperties"/>           
+       </property>
+   </bean>
+</beans>

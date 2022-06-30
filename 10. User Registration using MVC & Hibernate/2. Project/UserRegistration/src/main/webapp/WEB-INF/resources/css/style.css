@@ -1,0 +1,13 @@
+body{
+    background: brown !important;
+    color: white;
+}
+
+img{
+    width:200px;
+    height: 200px;
+}
+
+ul li a{
+    color: white;
+}

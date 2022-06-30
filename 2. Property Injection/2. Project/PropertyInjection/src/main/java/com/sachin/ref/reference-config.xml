@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <bean name="bref" class="com.sachin.ref.B">
+        <property name="y" value="34"/>            
+    </bean>
+    <bean name="aref" class="com.sachin.ref.A">
+        <property name="x" value="10"/>
+        
+        <property name="b">
+            <ref bean="bref"/>
+        </property>
+        
+        <!--We can also write like below-->
+        <!--<property name="b" ref="bref" />-->
+    </bean>
+    
+    <!--using p schema-->
+    <bean name="aref2" class="com.sachin.ref.A" p:x="100" p:b-ref="bref" />
+</beans>
+

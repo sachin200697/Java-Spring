@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd">
+ 
+    <!--Creating first bean--> 
+    <bean class="com.sachin.propertyinjection.Student" name="student1">
+        <property name="studentId">
+            <value>1</value>
+        </property>
+        <property name="studentName">
+            <value>Sachin Kumar</value>
+        </property>
+        
+        <!--We can also give value as attribute like this-->
+        <property name="studentAddress" value="Meerpur" />            
+    </bean>
+    
+    <!--Creating secnd bean using p schema(we have included p schema using namespace-->
+    <bean class="com.sachin.propertyinjection.Student" name="student2" p:studentId="23" p:studentName="Pradeep" p:studentAddress="Noida" />
+    
+</beans>
+
